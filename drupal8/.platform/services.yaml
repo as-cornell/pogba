@@ -1,0 +1,38 @@
+# The services of the project.
+#
+# Each service listed will be deployed
+# to power your Platform.sh project.
+
+mysqldb:
+    type: "mysql:10.0"
+    disk: 2048
+    configuration:
+        schemas:
+            - firstdb
+            - departmentsdb
+            - peopledb
+            - samldb
+        endpoints:
+            first:
+                default_schema: firstdb
+                privileges:
+                    firstdb: admin
+            departments:
+                default_schema: departmentsdb
+                privileges:
+                    departmentsdb: admin
+            people:
+                default_schema: peopledb
+                privileges:
+                    peopledb: admin
+            saml:
+                default_schema: samldb
+                privileges:
+                    samldb: admin
+
+#rediscache:
+#    type: "redis:3.0"
+#
+#solrsearch:
+#    type: "solr:4.10"
+#    disk: 1024

@@ -1,0 +1,10 @@
+uuid: f2e393c1-7aac-46b4-a4c7-f1c4971a107b
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: Q2Ra3jfoIVk0f3SjxJX61byRQFVBAbpzYDQOiY-kno8
+id: main
+label: 'Main navigation'
+description: 'Full blown navigation with all the pages, lives in the sidebar.'
+locked: true
