@@ -6,4 +6,4 @@ Twice as expensive and half as effective.
 
 ## Two-headed Drupal project template for Platform.sh
 
-This project provides Drupal 7 and 8 multisite projects hosted on [Platform.sh](http://platform.sh).
+This project provides Drupal 7 and 8 multisite projects hosted on [Platform.sh](http://platform.sh).  Based on the Fellaini and Scholes repos.
