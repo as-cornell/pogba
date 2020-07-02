@@ -2,7 +2,7 @@
 // Configure relationships.
 if (isset($_ENV['PLATFORM_RELATIONSHIPS'])) {
   $relationships = json_decode(base64_decode($_ENV['PLATFORM_RELATIONSHIPS']), TRUE);
-  if (empty($databases['default']) && !empty($relationships)) {
+  if (empty($databases['dept1']) && !empty($relationships)) {
     foreach ($relationships as $key => $relationship) {
       $drupal_key = ($key === 'database') ? 'default' : $key;
       foreach ($relationship as $instance) {
