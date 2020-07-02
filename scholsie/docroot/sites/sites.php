@@ -1,6 +1,6 @@
 <?php
 // DRUPAL-VM
-$sites['scholsie.as.fellaini.local'] = 'default';
+$sites['scholsie.fellaini.local'] = 'default';
 $sites['scholsie.dept1.fellaini.local'] = 'dept1';
 $sites['scholsie.dept2.fellaini.local'] = 'dept2';
 // PLATFORM
