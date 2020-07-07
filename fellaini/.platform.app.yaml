@@ -181,9 +181,6 @@ hooks:
       gulp pl
     # The deploy hook runs after your application has been deployed and started.
     deploy: |
-      unset NPM_CONFIG_PREFIX
-      export NVM_DIR="$PLATFORM_APP_DIR/.nvm"
-      nvm use 11.15.0
       set -e
       ./drush/platformsh_generate_drush_yml.php
       cd web
