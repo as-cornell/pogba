@@ -129,7 +129,7 @@
         "drupal/wordpress_migrate": "^2.4",
         "drupal/wysiwyg": "^2.6",
         "drupal/xmlsitemap": "^2.6",
-        "drush/drush": "^8.0",
+        "drush/drush": "^9.4",
         "symfony/filesystem": "~2.7|^3",
         "webflo/drupal-finder": "^1.0.0"
     },

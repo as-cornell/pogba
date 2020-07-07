@@ -11,7 +11,7 @@ type: 'php:7.2'
 
 # Configuration of the build of this application.
 build:
-  flavor: drupal
+  flavor: composer
 
 # The build-time dependencies of the app.
 dependencies:
@@ -120,6 +120,6 @@ variables:
         SIMPLESAMLPHP_CONFIG_DIR: /scholsie/simplesamlphp/config
 
 # Added for New Relic
-runtime:
-    extensions:
-        - newrelic
+#runtime:
+    #extensions:
+        #- newrelic
