@@ -1,0 +1,10 @@
+uuid: 1b195188-6ff0-4683-abfe-a5a58f288cc5
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: pLYPT4hESIgZcEhVbFFjsmL3NUuYEgfKJYju-VX9bUo
+name: 'Departments and Programs'
+vid: departments_and_programs
+description: 'Departments and Programs in the College of Arts and Sciences'
+weight: 0
