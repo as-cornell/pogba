@@ -1,6 +1,6 @@
 https://{default}/:
   type: upstream
-  upstream: app:http
+  upstream: fellaini:http
   primary: null
   id: null
   attributes: {}
@@ -26,16 +26,16 @@ https://{default}/:
     enabled: false
 https://departments.asd8.as.cornell.edu/:
   type: upstream
-  upstream: app:http
+  upstream: fellaini:http
 https://anthro.asd8.as.cornell.edu/:
   type: upstream
-  upstream: app:http
+  upstream: fellaini:http
 https://history.asd8.as.cornell.edu/:
   type: upstream
-  upstream: app:http
+  upstream: fellaini:http
 https://people.asd8.as.cornell.edu/:
   type: upstream
-  upstream: app:http
+  upstream: fellaini:http
 https://asd7.as.cornell.edu/:
   type: upstream
   upstream: scholsie:http
