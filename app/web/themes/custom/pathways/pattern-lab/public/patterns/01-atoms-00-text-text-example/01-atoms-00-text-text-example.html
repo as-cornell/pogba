@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html class="pl">
+  <head>
+    <title>Pattern Lab</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width" />
+    
+    <!-- Component styles -->
+    <link rel="stylesheet" href="../../../../dist/style.css?1594302197" media="all" />
+    <style>
+        @import url("https://use.typekit.net/fde2wmo.css");
+    </style>
+    <!-- Begin Pattern Lab (Required for Pattern Lab to run properly) -->
+    <!-- never cache patterns -->
+<meta http-equiv="cache-control" content="max-age=0" />
+<meta http-equiv="cache-control" content="no-cache" />
+<meta http-equiv="expires" content="0" />
+<meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+<meta http-equiv="pragma" content="no-cache" />
+
+<link rel="stylesheet" href="../../styleguide/css/styleguide.min.css?1594302197" media="all">
+<link rel="stylesheet" href="../../styleguide/css/prism-typeahead.min.css?1594302197" media="all" />
+    <!-- End Pattern Lab -->
+
+  </head>
+  <body class="body">
+    <!-- for js not found errors in Pattern Lab -->
+  	<div class="">
+  		<div id="tabs" class="tabs"></div><div style="max-width: 80%; margin: 0 auto;">
+<h1>This is a page of example texts</h1>
+<p>Primarily use for working out vertical rythyms. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, consequatur neque fugit unde debitis numquam veniam nisi provident sapiente ab perferendis veritatis voluptates quo quibusdam. A non quae voluptatibus sequi delectus. A inventore tempore amet deserunt, est illo nulla quisquam, aspernatur, neque asperiores dicta repellat. Qui eos beatae itaque optio.</p>
+<h2>Probably have a secondary item</h2>
+<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias laborum tenetur dolores sed est quis ratione sint? Delectus velit dolorum architecto ipsum, quos hic quidem aliquid tempora ad sunt fugiat itaque iste temporibus autem recusandae rem labore corporis? Earum distinctio error aliquid libero sed aspernatur eius recusandae minima velit qui iusto rerum aperiam saepe quidem quod numquam ad neque esse dolorem, deserunt quia explicabo quibusdam maxime quam? Illo sit rem dolores dolor voluptatibus, dolorem modi quas asperiores accusamus adipisci quae cum dignissimos enim similique nam amet repudiandae aperiam quis nobis ad est, ratione quasi molestiae. Odit dolorem magnam debitis omnis!</p>
+<h3>Third level header
+</h3>
+<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sit quasi praesentium suscipit laboriosam beatae? Ipsa autem ut tenetur laborum molestias odio eos reiciendis nisi unde perferendis nobis ipsam vitae illo, similique suscipit, quaerat recusandae omnis. Dignissimos cum veniam facere totam doloremque illo ex ut cupiditate eaque, in, omnis ducimus fugit obcaecati velit! Autem illo in perspiciatis deserunt amet, laborum doloremque!</p>
+<ul>
+    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio, nobis eligendi? Pariatur.</li>
+    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio, nobis eligendi? Pariatur.</li>
+    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio, nobis eligendi? Pariatur.</li>
+    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio, nobis eligendi? Pariatur.</li>
+</ul>
+<h3>Another level three heading</h3>
+<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Adipisci odit illo ipsa quas repellat fugiat maxime labore aperiam, eaque eveniet temporibus explicabo vel voluptatem. Doloremque distinctio assumenda cum? Eligendi, ab fuga eaque aliquid natus eum iste fugit dolor alias magni laboriosam nisi optio nesciunt ex necessitatibus molestias quae modi voluptates pariatur praesentium at quos.</p>
+<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsa eos cumque est iusto itaque, atque doloribus nemo, doloremque blanditiis error consequuntur minus alias dolorum possimus esse iure necessitatibus mollitia sunt beatae explicabo velit exercitationem. Fugiat, itaque ut repellendus esse tempora consectetur a iusto consequuntur deserunt maxime dolores. Ipsum provident vero vitae modi facere aliquam excepturi veniam voluptatem, labore, amet quae fuga, possimus inventore nesciunt minus qui eaque! Voluptas, at quas.</p>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat velit, inventore id voluptatibus at cum tempora nam atque eveniet laborum provident ut tenetur hic ea beatae? Ea eum, hic et, neque perferendis commodi cum dolores minima, pariatur nulla dignissimos eius quia doloremque enim. Nesciunt magnam, sint explicabo dignissimos porro cupiditate?</p>
+</div>
+
+  <!--DO NOT REMOVE-->
+  <script type="text/json" id="sg-pattern-data-footer" class="sg-pattern-data">
+  {"cssEnabled":false,"lineage":[],"lineageR":[],"patternBreadcrumb":{"patternType":"atoms","patternSubtype":"text"},"patternDesc":"","patternExtension":"twig","patternName":"text example","patternPartial":"atoms-text-example","patternState":"","extraOutput":[]}
+</script>
+
+<script>
+  /*!
+  * scriptLoader - v0.1
+  *
+  * Copyright (c) 2014 Dave Olsen, http://dmolsen.com
+  * Licensed under the MIT license
+  *
+  */
+  
+  var scriptLoader = {
+    run: function(js,cb,target) {
+      var s  = document.getElementById(target+'-'+cb);
+      for (var i = 0; i < js.length; i++) {
+        var src = (typeof js[i] != 'string') ? js[i].src : js[i];
+        var c   = document.createElement('script');
+        c.src   = '../../'+src+'?'+cb;
+        if (typeof js[i] != 'string') {
+          if (js[i].dep !== undefined) {
+            c.onload = function(dep,cb,target) {
+              return function() {
+                scriptLoader.run(dep,cb,target);
+              }
+            }(js[i].dep,cb,target);
+          }
+        }
+        s.parentNode.insertBefore(c,s);
+      }
+    }
+  }
+</script>
+
+<script id="pl-js-polyfill-insert-1594302197">
+  (function() {
+    if (self != top) {
+      var cb = '1594302197';
+      var js = [];
+      if (typeof document !== 'undefined' && !('classList' in document.documentElement)) {
+        js.push('styleguide/bower_components/classList.min.js');
+      }
+      scriptLoader.run(js,cb,'pl-js-polyfill-insert');
+    }
+  })();
+</script>
+
+<script id="pl-js-insert-1594302197">
+  (function() {
+    if (self != top) {
+      var cb = '1594302197';
+      var js = [ { 'src': 'styleguide/bower_components/jwerty.min.js', 'dep': [ 'styleguide/js/patternlab-pattern.min.js' ] } ];
+      scriptLoader.run(js,cb,'pl-js-insert');
+    }
+  })();
+</script>
+
+  <!-- Drupal-specific usage -->
+  <!-- example using symlinking -->
+  <!-- cd web/themes/custom/emulsify/components/js -->
+  <!-- ln -s ../../../../../core/assets/vendor/domready/ready.min.js ./ -->
+  <!-- ln -s ../../../../../core/misc/drupal.js ./ -->
+
+  <!-- UNCOMMENT AS NECESSARY -->
+  <!-- <script src="../../js/ready.min.js"></script> -->
+  <!-- <script src="../../js/drupal.js"></script> -->
+
+  <script src="../../../../dist/scripts-styleguide.js"></script>
+
+  <!-- If using Drupal.behaviors, uncomment for them to work in Pattern Lab -->
+  <!-- <script>Drupal.attachBehaviors();</script> -->
+
+  </body>
+</html>
