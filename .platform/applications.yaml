@@ -1,0 +1,245 @@
+# .platform/applications.yaml
+-   name: fellaini
+    type: 'php:7.2'
+    source:
+        root: fellaini
+    build:
+        flavor: composer
+    dependencies:
+      nodejs:
+        gulp-cli: "*"
+        yarn: "*"
+    relationships:
+        first: 'mysqldb:first'
+        departments: 'mysqldb:departments'
+        people: 'mysqldb:people'
+        saml: 'mysqldb:saml'
+    #    solr: 'solrsearch:solr'
+    #    redis: 'rediscache:redis'
+    web:
+        locations:
+            '/':
+                root: 'web'
+                expires: 5m
+                passthru: '/index.php'
+                allow: false
+                rules:
+                    # Allow access to common static files.
+                    '\.(jpe?g|png|gif|svgz?|css|js|map|ico|bmp|eot|woff2?|otf|ttf)$':
+                        allow: true
+                    '^/robots\.txt$':
+                        allow: true
+                    '^/sitemap\.xml$':
+                        allow: true
+
+            '/simplesaml':
+                root: 'vendor/simplesamlphp/simplesamlphp/www'
+                allow: true
+                scripts: true
+                index:
+                    - index.php
+
+            '/sites/default/files':
+                # Allow access to all files in the public files directory.
+                allow: true
+                expires: 5m
+                passthru: '/index.php'
+                root: 'web/sites/default/files'
+
+                # Do not execute PHP scripts.
+                scripts: false
+
+                rules:
+                    # Provide a longer TTL (2 weeks) for aggregated CSS and JS files.
+                    '^/sites/default/files/(css|js)':
+                        expires: 2w
+
+            '/sites/departments/files':
+                # Allow access to all files in the public files directory.
+                allow: true
+                expires: 5m
+                passthru: '/index.php'
+                root: 'web/sites/departments/files'
+
+                # Do not execute PHP scripts.
+                scripts: false
+
+                rules:
+                    # Provide a longer TTL (2 weeks) for aggregated CSS and JS files.
+                    '^/sites/default/files/(css|js)':
+                        expires: 2w
+
+            '/sites/people/files':
+                # Allow access to all files in the public files directory.
+                allow: true
+                expires: 5m
+                passthru: '/index.php'
+                root: 'web/sites/people/files'
+
+                # Do not execute PHP scripts.
+                scripts: false
+
+                rules:
+                    # Provide a longer TTL (2 weeks) for aggregated CSS and JS files.
+                    '^/sites/default/files/(css|js)':
+                        expires: 2w
+
+            '/styleguide':
+                allow: true
+                expires: 5m
+                root: 'web/themes/custom/pathways/pattern-lab/public'
+                index:
+                    - index.html
+                # Do not execute PHP scripts.
+                scripts: false
+            '/dist':
+                allow: true
+                expires: 5m
+                root: 'web/themes/custom/pathways/dist'
+                scripts: false
+            '/pattern-lab':
+                allow: true
+                expires: 5m
+                root: 'web/themes/custom/pathways/pattern-lab'
+                scripts: false
+            '/fonts':
+                allow: true
+                expires: 5m
+                root: 'web/themes/custom/pathways/fonts'
+                scripts: false
+            '/images':
+                allow: true
+                expires: 5m
+                root: 'web/themes/custom/pathways/images'
+                scripts: false
+
+    disk: 2048
+    mounts:
+        '/web/sites/default/files': 'shared:files/files-first'
+        '/web/sites/departments/files': 'shared:files/files-departments'
+        '/web/sites/people/files': 'shared:files/files-people'
+        '/tmp': 'shared:files/tmp'
+        '/private': 'shared:files/private'
+        '/drush-backups': 'shared:files/drush-backups'
+    hooks:
+        build: |
+            hooks:
+    build: |
+        unset NPM_CONFIG_PREFIX
+        curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.35.2/install.sh | dash
+        export NVM_DIR="$PLATFORM_APP_DIR/.nvm"
+        [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+        nvm current
+        nvm install 11.15.0
+        curl -sS https://platform.sh/cli/installer | php
+        set -e
+        cd web/themes/custom/pathways
+        npm install
+        gulp build
+        gulp pl
+    # The deploy hook runs after your application has been deployed and started.
+    deploy: |
+        unset NPM_CONFIG_PREFIX
+        export NVM_DIR="$PLATFORM_APP_DIR/.nvm"
+        nvm use 11.15.0
+        set -e
+        ./drush/platformsh_generate_drush_yml.php
+        cd web
+        drush -y cache-rebuild
+        drush -y updatedb
+    # The configuration of scheduled execution.
+    crons:
+        drupal:
+            spec: '*/20 * * * *'
+            cmd: 'cd web ; drush core-cron'
+    # Added for simplesaml
+    variables:
+        env:
+            SIMPLESAMLPHP_CONFIG_DIR: /fellaini/simplesamlphp/config
+
+    # Added for New Relic
+    runtime:
+        extensions:
+            - newrelic
+
+-   name: 'scholsie'
+    type: 'php:7.2'
+    build:
+      flavor: composer
+    dependencies:
+      php:
+        "drush/drush": "^8.0"
+    relationships:
+        scholsie: 'mysqldb:scholsie'
+        dept1: 'mysqldb:dept1'
+        dept2: 'mysqldb:dept2'
+        people7: 'mysqldb:people7'
+        saml7: 'mysqldb:saml7'
+
+    web:
+        locations:
+            '/':
+                root: 'docroot'
+                expires: 5m
+                passthru: '/index.php'
+                allow: false
+
+                # Rules for specific URI patterns.
+                rules:
+                    # Allow access to common static files.
+                    '\.(jpe?g|png|gif|svgz?|css|js|map|ico|bmp|eot|woff2?|otf|ttf)$':
+                        allow: true
+                    '^/robots\.txt$':
+                        allow: true
+                    '^/sitemap\.xml$':
+                        allow: true
+
+            '/sites/default/files':
+                # Allow access to all files in the public files directory.
+                allow: true
+                expires: 5m
+                passthru: '/index.php'
+                root: 'public/sites/default/files'
+
+                # Do not execute PHP scripts.
+                scripts: false
+
+                rules:
+                    # Provide a longer TTL (2 weeks) for aggregated CSS and JS files.
+                    '^/sites/default/files/(css|js)':
+                        expires: 2w
+
+    disk: 2048
+    mounts:
+        '/docroot/sites/default/files':
+            source: local
+            source_path: 'files'
+        '/tmp':
+            source: local
+            source_path: 'tmp'
+        '/private':
+            source: local
+            source_path: 'private'
+        '/drush-backups':
+            source: local
+            source_path: 'drush-backups'
+    hooks:
+        deploy: |
+            set -e
+            cd docroot
+            drush -y updatedb
+
+    # The configuration of scheduled execution.
+    crons:
+        drupal:
+            spec: '*/20 * * * *'
+            cmd: 'cd docroot ; drush core-cron'
+
+    # Added for simplesaml
+    variables:
+        env:
+            SIMPLESAMLPHP_CONFIG_DIR: /scholsie/simplesamlphp/config
+    # Added for New Relic
+    #runtime:
+        #extensions:
+            #- newrelic
