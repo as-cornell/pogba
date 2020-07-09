@@ -32,7 +32,6 @@ relationships:
 #    redis: 'rediscache:redis'
 
 # The configuration of app when it is exposed to the web.
-app_dir: /fellaini
 web:
     # Specific parameters for different URL prefixes.
     locations:
