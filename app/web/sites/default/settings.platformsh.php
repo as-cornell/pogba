@@ -44,7 +44,7 @@ if (getenv('PLATFORM_APP_DIR')) {
   if (!isset($settings['file_private_path'])) {
     $settings['file_private_path'] = getenv('PLATFORM_APP_DIR') . '/app/private';
   }
-  if (!isset($config['system.file']['path']['temporary'])) {
+  if (!isset($settings["file_temp_path"])) {
     //$config['system.file']['path']['temporary'] = getenv('PLATFORM_APP_DIR') . '/tmp/first';
     $settings["file_temp_path"] = "/app/tmp"
   }
