@@ -6,8 +6,5 @@
     "emulsify-gulp": "^4.0.0",
     "gulp": "^3.9.1"
   },
-  "scripts": {
-    "start": "gulp compile"
-  },
   "precommit.silent": true
 }
