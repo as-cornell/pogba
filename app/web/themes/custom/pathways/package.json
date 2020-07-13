@@ -6,5 +6,9 @@
     "emulsify-gulp": "^4.0.0",
     "gulp": "^3.9.1"
   },
+  "scripts": {
+    "start": "gulp compile && gulp theme",
+    "postinstall": "./scripts/pattern_lab.sh && ./scripts/twig_functions.sh"
+  },
   "precommit.silent": true
 }
