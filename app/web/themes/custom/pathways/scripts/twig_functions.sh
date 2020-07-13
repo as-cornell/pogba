@@ -5,7 +5,7 @@
 if [ -f ../../../../vendor/drupal-pattern-lab/bem-twig-extension/bem.function.php ]
 then
   # Drupal install
-  VENDORDIR=../../../../vendor
+  VENDORDIR=../../../../../vendor
 elif [ -f vendor/drupal-pattern-lab/bem-twig-extension/bem.function.php ]
 then
   # Standalone
