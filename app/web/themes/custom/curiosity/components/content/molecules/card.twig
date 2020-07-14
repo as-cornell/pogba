@@ -57,7 +57,7 @@
 {# {{nodeId}} #}
 <div {{ bem(card_base_class, (card_modifiers), card_blockname) }} {% if card_nodeId %}aria-labelledby="article-title-{{card_nodeId}}"{% endif %}>
     {# {% block card_img %} #}
-    {# {{article_card}} #}
+    {{article_card}}
         {# {% if card_img_src %}
             <div class="card__image">
                 {% include "@atoms/04-images/responsive-image.twig" with {
