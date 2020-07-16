@@ -8,6 +8,8 @@ Descr: defines content  for a feature image in a campfire
 --------------------------- */
 
 #}
+{% set article_byline = (content.field_byline_reference|render is not empty) ? content.field_byline_reference %}
+
 
 {% embed "@content/molecules/card.twig" with {
     card_modifiers : ["feature", "card"],
@@ -18,11 +20,10 @@ Descr: defines content  for a feature image in a campfire
 
     article_card : content.field_image,
 
-    card_byline_content : content.field_byline,
+    card_byline : article_byline,
     card_dateline: content.field_dateline,
 
     card_nodeId : node.id
 
 } %}
 {% endembed %}
-

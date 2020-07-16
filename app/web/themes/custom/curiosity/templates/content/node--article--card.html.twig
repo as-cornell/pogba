@@ -14,6 +14,8 @@ Descr: defines content for basic article card
 
 {# {% set card_byline = true %}
 {% set card_byline_content = content.field_byline %} #}
+{% set article_byline = (content.field_byline_reference|render is not empty) ? content.field_byline_reference %}
+
 
 
 {% embed "@content/molecules/card.twig" with {
@@ -25,7 +27,7 @@ Descr: defines content for basic article card
     article_card : content.field_image,
 
 
-    card_byline_content: content.field_byline,
+    card_byline: article_byline,
 
     card_dateline: content.field_dateline,
 

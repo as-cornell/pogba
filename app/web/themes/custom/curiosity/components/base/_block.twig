@@ -34,6 +34,16 @@
 {% endif %}
 {{ title_suffix }}
 {% block content %}
+
+{# if isList wrap content in list #}
+{% if isList %}
+  <ul {{ bem(list_base_class, (list_modifiers), list_blockname) }}>
+{% endif %}
+
     {{ content }}
+    
+{% if isList %}
+{% endif %}
+  </ul>
 {% endblock %}
 {# </div> #}
