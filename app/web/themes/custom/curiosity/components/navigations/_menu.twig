@@ -18,7 +18,7 @@
  *   - in_active_trail: TRUE if the link is in the active trail.
  */
 #}
-<h1>from _menu.twig</h1>
+
 {% import _self as menus %}
 
 {#
@@ -56,13 +56,13 @@
       ul_modifiers: menu_modifiers,
       ul_blockname: menu_blockname
     } %}
-				{% block list_content %}
-					{% for item in items %}
-				{% include "@navigations/_menu-item.twig" with {
-            li_base_class: item_base_class,
-            li_modifiers: item_modifiers,
-            li_blockname: item_blockname,
-          } %}
+      {% block list_content %}
+        {% for item in items %}
+        {% include "@navigations/_menu-item.twig" with {
+          li_base_class: item_base_class,
+          li_modifiers: item_modifiers,
+          li_blockname: item_blockname,
+        } %}
 			{% endfor %}
 		{% endblock %}
 	{% endembed %}

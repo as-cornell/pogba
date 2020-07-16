@@ -112,12 +112,7 @@
             } %} #}
         {% endif %}
         {% if card_body %}
-            {# {% include "@atoms/00-text/paragraph.twig" with {
-                "paragraph_content" : card_body,
-                "paragraph_blockname" : card_body_base_class | default(card_base_class),
-                "paragraph_modifiers" : card_body_modifiers,
-                "paragraph_base_class" : card_body_base_class | default('body')
-            } %} #}
+          {{card_body}}
         {% endif %}
 
         {#
