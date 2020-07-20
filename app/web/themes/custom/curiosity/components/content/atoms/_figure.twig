@@ -7,11 +7,6 @@
 {# set defaults from figrure.image in data.yaml #}
 {% set img_url = figures.image.url %}
 
-{% if pl %}
-	{% set img_src = figures.image.src %}
-	{% set img_caption = figures.image.caption %}
-	{% set img_credit = figures.image.credit %}
-{% endif %}
 
 {# {% set img_src = figures.image.src %} #}
 {% set img_caption = img_caption | default('') %}

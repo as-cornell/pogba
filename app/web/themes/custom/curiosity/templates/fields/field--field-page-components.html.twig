@@ -8,8 +8,12 @@ Descr: Just outputs item.content for each of the page-components
 
 #}
 
-
-{% for item in items %}
-  {{ item.content }}
-  {# {{kint(item.content.title)}} #}
-{% endfor %}
+{% set test= 'field--field-page-components' %}
+<h2>
+	field--field-page-components.html.twig
+</h2>
+{% embed "@content/atoms/_field.twig" with {
+    modifiers : ["grid", "page_components"],
+    classes : ['main-content']
+} %}
+{% endembed %}
