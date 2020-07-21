@@ -33,17 +33,17 @@
     <h2{{ title_attributes.addClass('h2') }}>{{ label }}</h2>
 {% endif %}
 {{ title_suffix }}
-{% block content %}
+
 
 {# if isList wrap content in list #}
 {% if isList %}
   <ul {{ bem(list_base_class, (list_modifiers), list_blockname) }}>
 {% endif %}
-
+{% block content %}
     {{ content }}
-    
+{% endblock %}    
 {% if isList %}
-{% endif %}
+
   </ul>
-{% endblock %}
+{% endif %}
 {# </div> #}
