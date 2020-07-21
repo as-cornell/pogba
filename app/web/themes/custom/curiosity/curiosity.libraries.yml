@@ -4,7 +4,9 @@ global:
       css/style.css: {}
 
   js:
-    js_min/scripts.js: {}
+    js_min/main-menu.js: {}
+    js_min/forms.js: {}
+    js_min/svguse.min.js: {}
 
   dependencies:
     - core/jquery
