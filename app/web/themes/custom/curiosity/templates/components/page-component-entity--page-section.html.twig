@@ -2,8 +2,8 @@
 
 /* -------------------------
 
-Title: entity--stats
-Descr: determines if stats should show one or multiple
+Title: page-component-entity--page-secton
+Descr: outputs a page section
 
 --------------------------- */
 
@@ -15,17 +15,15 @@ Descr: determines if stats should show one or multiple
 {% set items = content.field_page_components %}
 {% set items_length = items|length %}
 {% set divid = content.field_page_section_title.0["#context"]["value"] |lower |replace({" ": "-"}) %}
-{# {{vardumper()}} #}
 
 {% if items.1 %}
 	{% set multiple = true %}
 {% endif %}
-{# {{content.field_page_section_title}} #}
-{# <div class="navItem" id="{{divid}}"> #}
+
 {% embed "@content/molecules/_grouping.twig" with{
   items: items,
   title: content.field_page_section_title,
   divid : divid
 } %}
 {% endembed %}
-{# </div> #}
+
